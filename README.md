@@ -1,2 +1,9 @@
-# hakabonq-ai-security-hackathon
-👮 Solution for AI Security Hackathon at BMSTU, 2020, hakabonq Team
+# 👮 AI Security Hackathon, BMSTU, 2020, hakabonq Team
+
+**hakabonq** team:
+
+- @TheSawIsTheLaw
+- @mrrvz
+- @Justarone
+- @SpectralOne
+- @hackfeed
