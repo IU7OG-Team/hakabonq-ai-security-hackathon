@@ -1,0 +1,26 @@
+---
+- name: Deploy Jupyter Notebook
+  hosts: hakabonq
+  vars_files:
+    - "../vars/sensitive.yml"
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: Copy Jupyter config
+      copy:
+        src: ../../jupyter
+        dest: /home/bonghacker
+
+    - name: Shut down existing Jupyter setup
+      community.general.docker_compose:
+        project_src: jupyter
+        state: absent
+
+    - name: Create and start Jupyter setup
+      community.general.docker_compose:
+        project_src: jupyter
+      register: output
+
+    - ansible.builtin.debug:
+        var: output
