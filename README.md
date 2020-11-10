@@ -2,8 +2,8 @@
 
 **hakabonq** team:
 
-- @TheSawIsTheLaw
-- @mrrvz
-- @Justarone
-- @SpectralOne
-- @hackfeed
+- [@TheSawIsTheLaw](https://github.com/TheSawIsTheLaw)
+- [@mRrvz](https://github.com/mRrvz)
+- [@Justarone](https://github.com/Justarone)
+- [@SpectralOne](https://github.com/SpectralOne)
+- [@hackfeed](https://github.com/hackfeed)
