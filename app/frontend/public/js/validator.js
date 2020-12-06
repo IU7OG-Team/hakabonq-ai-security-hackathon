@@ -1,10 +1,8 @@
 const validateParameter = (val, max, min) => {
   if (isNaN(val)) {
-    alert("Parameter should be a number");
     return false;
   }
   if (val > max || val < min) {
-    alert(`Invalid parameters provided. Allowed values are from ${min} to ${max}`);
     return false;
   }
   return true;
@@ -17,7 +15,9 @@ const validateParameterListener = (id, max, min) => {
   } else {
     parameter.style.backgroundColor = "#ffffff";
   }
+};
 
+const activateButtonListener = () => {
   const getDataBtn = document.getElementById("get-data-btn");
   const inputs = document.querySelectorAll("input");
   let disable = false;
@@ -34,6 +34,8 @@ const validateParameterListener = (id, max, min) => {
     getDataBtn.disabled = false;
   }
 };
+
+document.body.addEventListener("keyup", activateButtonListener);
 
 document
   .getElementById("facid")

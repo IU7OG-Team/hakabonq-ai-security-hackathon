@@ -1,5 +1,5 @@
 const getModelData = () => {
-  fetch("http://localhost:8080/wine", {
+  fetch("http://195.19.36.69:8080/wine", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -20,16 +20,20 @@ const getModelData = () => {
   })
     .then((res) => res.json())
     .then((resData) => {
-      const markDiv = document.querySelector(".mark");
-      if (markDiv) {
-        markDiv.remove();
+      const markDivs = document.querySelectorAll(".mark,.mark-img");
+      if (markDivs) {
+        for (const el of markDivs) {
+          el.remove();
+        }
       }
 
       const resMark = resData.mark;
       let backgroundColor;
+      let death;
 
       if (resMark >= 3 && resMark <= 4) {
-        backgroundColor = "#f9bb4b";
+        backgroundColor = "#e33e5c";
+        death = true;
       } else if (resMark >= 5 && resMark <= 6) {
         backgroundColor = "#ffd782";
       } else {
@@ -45,6 +49,13 @@ const getModelData = () => {
       resField.textContent = resMark;
 
       msgField.after(resField);
+      if (death) {
+        const imgField = document.createElement("img");
+        imgField.src = "/img/death.png";
+        imgField.classList.add("mark-img");
+        resField.after(imgField);
+        imgField.after(document.createElement("br"));
+      }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     })
