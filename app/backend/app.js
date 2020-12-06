@@ -1,13 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const helmet = require("helmet");
 
 const wineRoutes = require("./routes/wine");
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(helmet());
 
 app.use((_req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

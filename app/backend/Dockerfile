@@ -7,5 +7,3 @@ RUN mkdir /backend
 WORKDIR /backend
 
 RUN npm install
-
-USER node

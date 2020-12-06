@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(rel="shortcut icon", href="/img/favicon.png", type="image/png")
+        link(rel="stylesheet", href="https://res.cloudinary.com/finnhvman/raw/upload/matter/matter-0.2.2.min.css")
+        link(rel="stylesheet", href="/css/main.css")
+    body
+        div
+            h1.matter-h1 WineChecker
+                img(src="/img/favicon.png", alt="WineChecker Logo")
+                p.matter-body1 Developed by #[a.matter-link(href="https://github.com/IU7OG-Team/hakabonq-ai-security-hackathon", target="blank") hakabonq]
+        div
+            h2.matter-h2 Input wine parameters
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Fixed acidity, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Volatile acidity, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Citric acid, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Residual sugar, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Chlorides, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Free sulfur dioxide, mg/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Total sulfur dioxide, mg/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Density, g/cm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder pH
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Sulphates, g/dm#[sup 3]
+            br
+            br
+            label.matter-textfield-standard(style="width: 50%;")
+                input(placeholder=" ")
+                span.placeholder Alcohol, % by volume
+            br
+            br
+        div
+            button.matter-button-contained#get-data-btn(style="width: 150px; height: 50px;") Get Data
+        script(src="/js/wine.js")
