@@ -1,0 +1,27 @@
+---
+- name: Deploy Web service
+  hosts: hakabonq
+  vars_files:
+    - "../vars/sensitive.yml"
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: Copy Web service directory
+      copy:
+        src: ../../app
+        dest: /home/bonghacker
+
+    - name: Shut down existing Web service setup
+      community.general.docker_compose:
+        project_src: app
+        state: absent
+
+    - name: Create and start Web service setup
+      community.general.docker_compose:
+        project_src: jupyter
+        build: yes
+      register: output
+
+    - ansible.builtin.debug:
+        var: output
