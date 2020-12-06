@@ -78,5 +78,3 @@ document
 document
   .getElementById("alcohol")
   .addEventListener("change", validateParameterListener.bind(null, "alcohol", 14.9, 8.4));
-
-document.getElementById("get-data-btn").addEventListener("mouseenter", validateAll);
