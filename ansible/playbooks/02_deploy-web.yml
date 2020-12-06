@@ -19,7 +19,7 @@
 
     - name: Create and start Web service setup
       community.general.docker_compose:
-        project_src: jupyter
+        project_src: app
         build: yes
       register: output
 
