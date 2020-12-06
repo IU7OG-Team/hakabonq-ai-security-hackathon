@@ -1,5 +1,23 @@
 const getModelData = () => {
-  fetch("http://localhost:8080/wine")
+  fetch("http://localhost:8080/wine", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      fixedAcidity: document.getElementById("facid").value,
+      volatileAcidity: document.getElementById("vacid").value,
+      citricAcid: document.getElementById("cacid").value,
+      residualSugar: document.getElementById("rsugar").value,
+      chlorides: document.getElementById("chlorides").value,
+      freeSO2: document.getElementById("fsdioxide").value,
+      totalSO2: document.getElementById("tsdioxide").value,
+      density: document.getElementById("density").value,
+      ph: document.getElementById("ph").value,
+      sulphates: document.getElementById("sulphates").value,
+      alcohol: document.getElementById("alcohol").value,
+    }),
+  })
     .then((res) => res.json())
     .then((resData) => {
       const markDiv = document.querySelector(".mark");
@@ -30,7 +48,10 @@ const getModelData = () => {
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(document.getElementById("facid"));
+      console.log(err);
+    });
 };
 
 document.getElementById("get-data-btn").addEventListener("click", getModelData);

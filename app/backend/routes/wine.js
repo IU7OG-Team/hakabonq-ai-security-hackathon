@@ -4,6 +4,6 @@ const wineController = require("../controllers/wine");
 
 const router = express.Router();
 
-router.get("/", wineController.getWineMark);
+router.post("/", wineController.getWineMark);
 
 module.exports = router;
