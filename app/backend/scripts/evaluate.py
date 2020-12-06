@@ -17,6 +17,6 @@ if __name__ == '__main__':
     opt = parser.parse_args()
 
     predict = [[getattr(opt, arg) for arg in vars(opt)]]
-    with open('scripts/best.pkl', 'rb') as best:
+    with open('/backend/scripts/best.pkl', 'rb') as best:
         model = pickle.load(best)
-        print(model.predict(predict))
+        print(model.predict(predict)[0])
