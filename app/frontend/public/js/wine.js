@@ -29,11 +29,11 @@ const getModelData = () => {
       let backgroundColor;
 
       if (resMark >= 3 && resMark <= 4) {
-        backgroundColor = "#ffc800";
+        backgroundColor = "#f9bb4b";
       } else if (resMark >= 5 && resMark <= 6) {
-        backgroundColor = "#ffea00";
+        backgroundColor = "#ffd782";
       } else {
-        backgroundColor = "#1eff00";
+        backgroundColor = "#3cd782";
       }
 
       const msgField = document.body.querySelector("h2");
