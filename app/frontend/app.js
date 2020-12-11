@@ -9,8 +9,16 @@ app.set("views", "views");
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", (_req, res, _next) => {
+app.get("/about", (_req, res, _next) => {
+  res.render("about", { pageTitle: "About project" });
+});
+
+app.get("/", (_req, res, _next) => {
   res.render("index", { pageTitle: "WineChecker" });
+});
+
+app.use((_req, res, _next) => {
+  res.render("404", { pageTitle: "Wine Not Found" });
 });
 
 app.listen(3000);
